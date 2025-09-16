@@ -732,18 +732,12 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-.home-coin-art {
-  grid-column-gap: var(--container--column-gap);
-  grid-template-rows: auto;
-  grid-template-columns:
-    minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)
-    minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
-      0,
-      1fr
-    )
-    minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  grid-auto-columns: minmax(0, 1fr);
-  display: grid;
+.home-coin-sub [aria-hidden="true"] {
+  display: inline-block;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+  will-change: opacity;
 }
 .home-how-wrap {
   z-index: 2;
