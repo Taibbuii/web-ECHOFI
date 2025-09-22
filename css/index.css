@@ -662,7 +662,7 @@ body {
   display: block;
 }
 .btn-outline:hover:where(.w-variant-3b73750c-3331-a1e7-df33-957619daf4d4) {
-  border-color:var(--cl-txt-dm-sub) ;
+  border-color: var(--cl-txt-dm-sub);
 }
 .header-menu-toggle {
   display: none;
@@ -1469,6 +1469,8 @@ img {
   justify-self: center;
 }
 .home-nft-main-label-wrap {
+  grid-row: 1/2;
+  grid-column: 1/3;
   background-color: var(--cl-bg);
   text-align: center;
   -webkit-clip-path: url(#titleClip);
@@ -1496,20 +1498,6 @@ img {
   height: 40rem;
   display: flex;
 }
-.home-nft-main-item-stack {
-  aspect-ratio: 350 / 400;
-  backface-visibility: visible;
-  perspective: 500px;
-  perspective-origin: 100%;
-  transform-style: preserve-3d;
-  flex: none;
-  grid-template-rows: auto;
-  grid-template-columns: minmax(0, 1fr);
-  grid-auto-columns: minmax(0, 1fr);
-  width: auto;
-  height: 100%;
-  display: grid;
-}
 .home-nft-main-left-item {
   z-index: 1;
   backface-visibility: hidden;
@@ -1522,6 +1510,76 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
+  animation-name: leftItem;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  --left-item: 116px;
+  --width-left-right-item: 350px;
+  --height-left-right-item: 400px;
+  --width-leftItem: 70px;
+  --height-leftItem: 80px;
+}
+.home-nft-main-left-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.home-nft-main-left-item:nth-child(2) {
+  animation-delay: 1s;
+}
+.home-nft-main-left-item:nth-child(3) {
+  animation-delay: 2s;
+}
+.home-nft-main-left-item:nth-child(4) {
+  animation-delay: 3s;
+}
+.home-nft-main-left-item:nth-child(5) {
+  animation-delay: 4s;
+}
+.home-nft-main-left-item:nth-child(6) {
+  animation-delay: 5s;
+}
+@keyframes leftItem {
+  0% {
+    right: calc(-1 * var(--left-item));
+    top: 0px;
+    width: var(--width-left-right-item);
+    height: var(--height-left-right-item);
+    opacity: 1;
+  }
+  20% {
+    right: 0px;
+    top: 0px;
+    width: var(--width-left-right-item);
+    height: var(--height-left-right-item);
+    opacity: 1;
+  }
+  40% {
+    right: calc(var(--left-item));
+    top: calc(var(--height-leftItem) / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem)));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem)));
+    opacity: 1;
+  }
+  60% {
+    right: calc(var(--left-item) * 2);
+    top: calc(var(--height-leftItem) * 2 / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem) * 2));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem) * 2));
+    opacity: 1;
+  }
+  80% {
+    right: calc(var(--left-item) * 3);
+    top: calc(var(--height-leftItem) * 3 / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem) * 3));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem) * 3));
+     opacity: 1;
+  }
+  100% {
+    right: calc(var(--left-item) * 4);
+    top: calc(var(--height-leftItem) * 4 / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem) * 4));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem) * 4));
+    opacity: 0;
+  }
 }
 .home-nft-main-right {
   -webkit-clip-path: inset(0% -100% 0% 0% round 1.2rem);
@@ -1558,6 +1616,76 @@ img {
   width: auto;
   height: 100%;
   position: relative;
+  animation-name: rightItem;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  --right-item: 166px;
+  --width-left-right-item: 350px;
+  --height-left-right-item: 400px;
+  --width-leftItem: 70px;
+  --height-leftItem: 80px;
+}
+.home-nft-main-right-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.home-nft-main-right-item:nth-child(2) {
+  animation-delay: 1s;
+}
+.home-nft-main-right-item:nth-child(3) {
+  animation-delay: 2s;
+}
+.home-nft-main-right-item:nth-child(4) {
+  animation-delay: 3s;
+}
+.home-nft-main-right-item:nth-child(5) {
+  animation-delay: 4s;
+}
+.home-nft-main-right-item:nth-child(6) {
+  animation-delay: 5s;
+}
+@keyframes rightItem {
+  0% {
+    left: calc(-1 * var(--right-item));
+    top: 0px;
+    width: var(--width-left-right-item);
+    height: var(--height-left-right-item);
+    opacity: 1;
+  }
+  20% {
+    left: 0px;
+    top: 0px;
+    width: var(--width-left-right-item);
+    height: var(--height-left-right-item);
+    opacity: 1;
+  }
+  40% {
+    left: calc(var(--right-item));
+    top: calc(var(--height-leftItem) / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem)));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem)));
+    opacity: 1;
+  }
+  60% {
+    left: calc(var(--right-item) * 2);
+    top: calc(var(--height-leftItem) * 2 / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem) * 2));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem) * 2));
+    opacity: 1;
+  }
+  80% {
+    left: calc(var(--right-item) * 3);
+    top: calc(var(--height-leftItem) * 3 / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem) * 3));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem) * 3));
+     opacity: 1;
+  }
+  100% {
+    left: calc(var(--right-item) * 4);
+    top: calc(var(--height-leftItem) * 4 / 2);
+    width: calc(var(--width-left-right-item) - (var(--width-leftItem) * 4));
+    height: calc(var(--height-left-right-item) - (var(--height-leftItem) * 4));
+    opacity: 0;
+  }
 }
 .home-nft-arr.bot {
   padding-top: 6rem;
@@ -2156,9 +2284,9 @@ img {
   padding-bottom: 4rem;
 }
 .div-line.home-faq-main-item-line.bot {
-    display: none;
-    top: auto;
-    bottom: 0;
+  display: none;
+  top: auto;
+  bottom: 0;
 }
 .home-play {
   padding-top: 30rem;
@@ -2282,11 +2410,11 @@ img {
   display: flex;
 }
 .footer-link-tc {
-    color: var(--cl-txt-dm-soft);
-    transition: color .4s;
+  color: var(--cl-txt-dm-soft);
+  transition: color 0.4s;
 }
 .footer-link-tc:hover {
-    color: var(--cl-white)
+  color: var(--cl-white);
 }
 .hover-line {
   --line-spacing: 1rem;
